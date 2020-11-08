@@ -17,3 +17,23 @@
 
 // set dave_grades to 1, 2, 3, 2
 // print the results of calling calculate_gpa with dave_grades
+
+const calculate_gpa = (student_grades) => {
+    let grade_total = 0;
+
+    for(i = 0; i < student_grades.length; i++) {
+        if (student_grades[i] > 0 && student_grades[i] <= 4) {
+            grade_total += student_grades[i]
+        } else {
+            return console.log("can't complete calculation")
+        }
+    }
+    const gpa = grade_total / student_grades.length;
+    return gpa;
+}
+
+const reggie_grades = [4, 4, 3, 4];
+const dave_grades = [1, 2, 3, 2];
+
+console.log(calculate_gpa(reggie_grades));
+console.log(calculate_gpa(dave_grades));
